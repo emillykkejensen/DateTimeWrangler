@@ -1,0 +1,50 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+[![Travis-CI Build Status](https://travis-ci.org/emillykkejensen/DateTimeWrangler.svg?branch=master)](https://travis-ci.org/emillykkejensen/DateTimeWrangler)
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# DateTimeWrangler
+
+This R Package converts a DateTime into diff. value such as day of the week, time of day, day of the year, whether the time and day is during working hours, if it is a holiday or national vacation day, etc.
+
+## Installation
+
+You can install DateTimeWrangler from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("emillykkejensen/DateTimeWrangler")
+```
+
+## Example
+
+To use DateTimeWrangler simply give it a list of datetime values.
+
+```{r example}
+
+library(DateTimeWrangler)
+
+datetimes <- c(as.POSIXct("2018-05-12 12:35:20 CET"),
+               as.POSIXct("2018-05-14 10:11:04 CET"),
+               as.POSIXct("2018-07-01 04:50:02 CET"),
+               as.POSIXct("2018-12-25 18:02:51 CET"))
+
+populated_datetime <- datetime_to_cols(datetimes)
+
+knitr::kable(populated_datetime)
+
+
+```
+

@@ -4,18 +4,58 @@
 \alias{datetime_to_cols}
 \title{DateTime to columns}
 \usage{
-datetime_to_cols(datetime, timeOfDay = "danish")
+datetime_to_cols(datetime, country = "denmark", suffixes = NULL,
+  return = "data.table", verbose = FALSE)
 }
 \arguments{
-\item{datetime}{A datetime object}
+\item{datetime}{A datetime object.}
+
+\item{country}{What country to get country specific values (holidays, vacations and time of day) from.
+See details for a list of countries.}
+
+\item{suffixes}{A character specifying the suffixes to be used for all columns.This is
+particularly handy if you want to keep track of multiple datetime inputs. NULL == no suffixes.}
+
+\item{return}{character; What class to return the output data in - either 'data.table',
+'data.frame' or 'tibble'.}
+
+\item{verbose}{Show what is going on...}
 }
 \value{
-A Data Frame including the following columns:
+A Data Frame including the following columns (class in parenthesis):
 
 \itemize{
-  \item \strong{datetime:} The inputtet datetime
+  \item \strong{datetime:} The inputtet datetime parameter (same class as your input)
+  \item \strong{date:} Date (IDate or Date)
+  \item \strong{time:} Time (ITime)
+  \item \strong{year:} Year (integer)
+  \item \strong{quarter:} Quarter of the year (integer)
+  \item \strong{month:} Month of the year (integer)
+  \item \strong{week:} Week number (integer)
+  \item \strong{yday:} Day of the year (integer)
+  \item \strong{mday:} Day of the month (integer)
+  \item \strong{wday:} Day of the week - 1 is monday (integer)
+  \item \strong{hour:} Hour (integer)
+  \item \strong{minute:} Minute (integer)
+  \item \strong{second:} Second (integer)
+  \item \strong{timeOfDay:} The time of day (factor)
+  \item \strong{withinWorkingHours:} Is it within working hours (logical)
+  \item \strong{firstWeekMonth:} Is it the first week of the month (logical)
+  \item \strong{lastWeekMonth:} Is it the last week of the month (logical)
+  \item \strong{firstMondayMonth:} Is it the first monday of the month (logical)
+  \item \strong{lastFridayMonth:} Is it the last friday of the month (logical)
+  \item \strong{isHoliday:} Is it a national holiday (logical)
+  \item \strong{isVacation:} Is it a national vacation (logical)
 }
 }
 \description{
-Extract various info from DateTime such as weekday, time of day, during working hours, etc.
+Extract various info from a DateTime value such as day of the week, time of day, day of the year,
+whether the time and day is during working hours, if it is a holiday or national vacation day, etc.
+}
+\details{
+The following countries are supported:
+
+\itemize{
+  \item denmark
+}
 }

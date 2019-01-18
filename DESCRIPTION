@@ -3,7 +3,7 @@ Type: Package
 Title: DateTimeWrangler | convert datetime into comprehensive data.frames with parsed values
 Version: 0.1.0
 Authors@R: person("Emil", "Lykke Jensen", email = "emil@emillykkejensen.dk", role = c("aut", "cre"))
-Description: This R Package converts a list of DateTimes into a data.frame with columns for
+Description: This R Package converts a DateTime into diff. value such as day of the week, time of day, day of the year, whether the time and day is during working hours, if it is a holiday or national vacation day, etc.
 Depends: data.table, magrittr
 License: MIT + file LICENSE
 Encoding: UTF-8
