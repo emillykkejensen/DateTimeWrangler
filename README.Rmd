@@ -33,7 +33,6 @@ devtools::install_github("emillykkejensen/DateTimeWrangler")
 To use DateTimeWrangler simply give it a list of datetime values.
 
 ```{r example}
-
 library(DateTimeWrangler)
 
 datetimes <- c(as.POSIXct("2018-05-12 12:35:20 CET"),
@@ -43,8 +42,9 @@ datetimes <- c(as.POSIXct("2018-05-12 12:35:20 CET"),
 
 populated_datetime <- datetime_to_cols(datetimes)
 
+```
+
+```{r echo=FALSE, results='asis'}
 knitr::kable(populated_datetime)
-
-
 ```
 

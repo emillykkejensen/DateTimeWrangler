@@ -23,7 +23,6 @@ Example
 To use DateTimeWrangler simply give it a list of datetime values.
 
 ``` r
-
 library(DateTimeWrangler)
 #> Loading required package: data.table
 #> Loading required package: magrittr
@@ -34,8 +33,6 @@ datetimes <- c(as.POSIXct("2018-05-12 12:35:20 CET"),
                as.POSIXct("2018-12-25 18:02:51 CET"))
 
 populated_datetime <- datetime_to_cols(datetimes)
-
-knitr::kable(populated_datetime)
 ```
 
 | datetime            | date       |      time|  year|  quarter|  month|  week|  yday|  mday|  wday|  hour|  minute|  second| timeOfDay | isWeekend | withinWorkingHours | firstWeekMonth | lastWeekMonth | firstMondayMonth | lastFridayMonth | isHoliday | isVacation |
